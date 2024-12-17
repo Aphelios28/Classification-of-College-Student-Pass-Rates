@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Home Price Prediction</title>
+</head>
+
+<body>
+    <div class="main-block">
+        <div class="div left-part">
+        </div>
+        <form action="{{ url_for('predict')}}" method="post">
+            <section>
+                <center>
+                    <h1><b>Predict a student's college pass rate</b></h1>
+                </center>
+                <div class="div info">
+                    <label>Enter GRE score</label><br>
+                    <input type="number" name="GRE" placeholder="BRE Socre" step=50 required><br>
+                    <label>Enter TOEFL Score</label><br>
+                    <input type="number" name="TOEFL" placeholder="TOEFL Score" min = 0  required><br>
+                    <label>Enter University Rating</label><br>
+                    <input type="number" name="Rating" placeholder="University Rating" min = 0  required><br>
+                    <label>Enter SOP</label><br>
+                    <input type="number" name="SOP" placeholder="SOP" stop = 0.1 required><br>
+                    <label>Enter LOR</label><br>
+                    <input type="number" name="LOR" placeholder="LOR" required><br>
+                    <label>Enter CGPA</label><br>
+                    <input type="number" name="CGPA" placeholder="CGPA" step = 0.1 required><br>
+                    <label>Enter Research</label><br>
+                    <input type="number" name="Research" placeholder="Research" step = 0.01 required><br>
+                    <center><button type = "submit">Show the answer</button></center>
+                </div>
+                <div class="result">
+                    <h2>result</h2>
+                    <p>{{result}}</p>
+                </div>
+            </section>
+        </form>
+        <footer>
+            <p><i>Group 8</i></p>
+        </footer>
+    </div>
+
+</body>
+
+</html>
