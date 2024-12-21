@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 import joblib
 
 app = Flask(__name__)
-model = joblib.load("D:/model.pkl")
+model = joblib.load("D:\Study\MachineLearning\Classification_of_College_Student_Pass_Rates\model.pkl")
 
 @app.route('/')
 def index():

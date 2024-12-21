@@ -1,9 +1,9 @@
 from flask import Flask, request, render_template
-import pickle
+import joblib
 import numpy as np
 
 app = Flask(__name__)
-model = pickle.load(open('D:\Study\MachineLearning\Classification_of_College_Student_Pass_Rates\model.pkl', 'rb'))
+model = joblib.load(open('D:\Study\MachineLearning\Classification_of_College_Student_Pass_Rates\model.pkl', 'rb'))
 @app.route('/')
 def hello():
     return render_template('index.html')
